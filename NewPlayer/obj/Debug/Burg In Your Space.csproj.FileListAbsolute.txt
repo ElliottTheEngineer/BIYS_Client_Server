@@ -1,0 +1,33 @@
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\881TheBurg.exe.config
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\881TheBurg.xml
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\881TheBurg.exe
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\881TheBurg.pdb
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.Asio.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.Core.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.Midi.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.Wasapi.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.WinForms.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.WinMM.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\SharpUpdate.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\System.Security.AccessControl.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\SharpUpdate.pdb
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\NAudio.xml
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\System.Security.AccessControl.xml
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\Burg In Your Space.csprojAssemblyReference.cache
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\NewPlayer.BurgInYourSpace.resources
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\NewPlayer.Information.resources
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\NewPlayer.Properties.Resources.resources
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\NewPlayer.FrmSettings.resources
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\Burg In Your Space.csproj.GenerateResource.cache
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\Burg In Your Space.csproj.CoreCompileInputs.cache
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\Burg In Your Space.csproj.CopyComplete
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\881TheBurg.exe
+C:\Users\elliottdy\Desktop\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\881TheBurg.pdb
+\\10.0.0.3\Web\Burg in your space Backups\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\Burg In Your Space.csproj.AssemblyReference.cache
+\\10.0.0.3\Web\Burg in your space Backups\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\881TheBurg.exe
+\\10.0.0.3\Web\Burg in your space Backups\Burg in Your Space\NewPlayer\NewPlayer\obj\Debug\881TheBurg.pdb

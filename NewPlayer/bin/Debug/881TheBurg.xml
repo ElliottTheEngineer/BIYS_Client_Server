@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>881TheBurg</name>
+    </assembly>
+    <members>
+        <member name="F:NewPlayer.BurgInYourSpace.Controller">
+            <summary>
+            Server Controller to Read files from server directory
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.player">
+            <summary>
+            Player to play songs that exists on remote server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.mouseDown">
+            <summary>
+            Keeps track of whether or not the user is pressing down on the application
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.lastLocation">
+            <summary>
+            Keeps track of the last position the form was in.
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.AllPlaylists">
+            <summary>
+            Locations of all playlists on remote server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.Playlist">
+            <summary>
+            Stores all songs in a playlist in alphabetical order
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.ShuffledPlaylist">
+            <summary>
+            Stores all songs in a playlist in a random order
+            gets refreshed every time the user completes the playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.ErrorMessage(System.Exception,System.String,System.Int32)">
+            <summary>
+            Format all Error Messages to look alike
+            </summary>
+            <param name="ErrorCode">Error Code, can be looked up at end of Form1.cs</param>
+            <param name="LineNumber">LineNumber of where the error occured</param>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.#ctor">
+            <summary>
+            Initialize Form Components
+            Addes Song Chagned Event Listener
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.Form1_Load(System.Object,System.EventArgs)">
+            <summary>
+            Gets called when form has finished loading
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.Main_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.Main_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User lifts up with the mouse on the form, this function tells the program to stop moving the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.Main_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.btnSettings_Click(System.Object,System.EventArgs)">
+            <summary>
+            This function gets called when the settings button is pressed.
+            This function shows the settings page
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.btnClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            This function gets called when the close button is pressed
+            This function closes all open forms
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.btnPrevious_Click(System.Object,System.EventArgs)">
+            <summary>
+            This function gets called when the 'Previous song' button is pressed
+            This function plays the previous song in the playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.btnPlayPause_Click(System.Object,System.EventArgs)">
+            <summary>
+            This functio gets called when the play/pause button is pressed
+            This function plays/pauses the current song
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.btnNext_Click(System.Object,System.EventArgs)">
+            <summary>
+            This function gets called when the 'Next song' button is pressed
+            This function plays the next song in the playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.PlaylistDropDown_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            When a new playlist is selected from the drop down this function updates the playlist
+            and gets all the songs from the selected playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.ChangedEventHandler(System.Object,System.EventArgs)">
+            <summary>
+            Event Handler for when player switches song to
+            Updates Title label on form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.BackgroundLog_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Check when player finishes a song
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.BackgroundLog_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            After player finishes a song update the user interface
+            </summary>
+        </member>
+        <member name="F:NewPlayer.BurgInYourSpace.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NewPlayer.BurgInYourSpace.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Information.s">
+            <summary>
+            Stores a SharpUpdater object to update the application on request
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Information.xmlLocation">
+            <summary>
+            Stores XML location on server
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.ApplicationName">
+            <summary>
+            Stores the Application name
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.ApplicationId">
+            <summary>
+            Stores the application ID
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.ApplicationAssembly">
+            <summary>
+            Stores the Assembly Version
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.ApplicationIcon">
+            <summary>
+            Stores the Icon of the pgoram
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.UpdateXmlLocaion">
+            <summary>
+            Stores the update.xml location on Server
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Information.Context">
+            <summary>
+            Stores the form itself
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Information.mouseDown">
+            <summary>
+            Keeps track of whether or not the user is pressing down on the application
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Information.lastLocation">
+            <summary>
+            Keeps track of the last position the form was in.
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.#ctor">
+            <summary>
+            Initializes Form Components
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.ErrorMessage(System.Exception,System.String,System.Int32)">
+            <summary>
+            Format all Error Messages to look alike
+            </summary>
+            <param name="ErrorCode">Error Code, can be looked up at end of Form1.cs</param>
+            <param name="LineNumber">LineNumber of where the error occured</param>
+        </member>
+        <member name="M:NewPlayer.Information.Main_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.Main_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User lifts up with the mouse on the form, this function tells the program to stop moving the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.Main_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.btnClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gets called when the Close button is pressed
+            Closes the information form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.btn_Update_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gets called the the Update button is pressed
+            Check if a new version is available on the server
+            If it is, update the proram
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Information.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Information.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NewPlayer.Information.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.Playlist">
+            <summary>
+            List of all songs in current playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.ShuffledPlaylist">
+            <summary>
+            list of all songsin current playlist, in a random/shuffled order
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.Sweepers">
+            <summary>
+            list of all sweepers in current playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.SweepersFolder">
+            <summary>
+            list of all folders in current playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.mf">
+            <summary>
+            Reader to read file from server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.wo">
+            <summary>
+            wave out event to play song from server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.CurrentIndex">
+            <summary>
+            keeps track of current location in playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.Switching">
+            <summary>
+            keeps track of whether the payer is switching songs or actively playling
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.ServerLocation">
+            <summary>
+            location to server; IP address
+            </summary>
+        </member>
+        <member name="F:NewPlayer.Player.Controller">
+            <summary>
+            server controller used to read files from server location
+            </summary>
+        </member>
+        <member name="E:NewPlayer.Player.Changed">
+            <summary>
+            event handler that triggers when song changes
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.ErrorMessage(System.Exception,System.String,System.Int32)">
+            <summary>
+            Format all Error Messages to look alike
+            </summary>
+            <param name="ErrorCode">Error Code, can be looked up at end of Form1.cs</param>
+            <param name="LineNumber">LineNumber of where the error occured</param>
+        </member>
+        <member name="M:NewPlayer.Player.showMessage(System.String)">
+            <summary>
+            Asynchronous show messagebox
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="ServerLocation">location to the server</param>
+        </member>
+        <member name="M:NewPlayer.Player.PlayPause">
+            <summary>
+            play/pause the current song
+            if playing, pauise
+            if paused, play
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.Next">
+            <summary>
+            play the next song in the playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.Previous">
+            <summary>
+            play the previous song in the playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.setPlaylist(System.Collections.Generic.List{NewPlayer.SongProperties})">
+            <summary>
+            change current playlist
+            this is called when user selects a new playlist to play
+            </summary>
+            <param name="Playlist"></param>
+        </member>
+        <member name="M:NewPlayer.Player.setSweepers(System.String)">
+            <summary>
+            gets all sweepers from server
+            </summary>
+            <param name="PlaylistLocation">swepers location</param>
+        </member>
+        <member name="M:NewPlayer.Player.RefreshPlaylist">
+            <summary>
+            Reset and Shuffle new Playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.AddSweepers">
+            <summary>
+            Add sweepers to shuffled playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.ClearPlaylists">
+            <summary>
+            Clear all lists as new ones have been selected
+            </summary>
+        </member>
+        <member name="M:NewPlayer.Player.getCurrentIndex">
+            <summary>
+            get the index of the currently playing song
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewPlayer.Player.isPlaying">
+            <summary>
+            check if the player is currently playing
+            </summary>
+            <returns>true if playing, false if paused</returns>
+        </member>
+        <member name="M:NewPlayer.Player.isPaused">
+            <summary>
+            check if the player is currently paused
+            </summary>
+            <returns>true if paused, false if playing</returns>
+        </member>
+        <member name="M:NewPlayer.Player.isStopped">
+            <summary>
+            check if the player is stopped
+            </summary>
+            <returns>true if stopped, false if playing/paused</returns>
+        </member>
+        <member name="M:NewPlayer.Player.isSwitching">
+            <summary>
+            check if the player is switching songs
+            </summary>
+            <returns>true if switching, false if playing/pause/stopped</returns>
+        </member>
+        <member name="M:NewPlayer.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:NewPlayer.ServerController.ServerAddress">
+            <summary>
+            Stores the locatoin to the server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.ServerController.AllPlaylists">
+            <summary>
+            Stores all playlists available on the server
+            </summary>
+        </member>
+        <member name="F:NewPlayer.ServerController.CurrentPlaylist">
+            <summary>
+            Stores the current playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.ServerController.playlist">
+            <summary>
+            stores all songs in current playlist
+            </summary>
+        </member>
+        <member name="F:NewPlayer.ServerController.Sweepers">
+            <summary>
+            Stores all the sweepers in a playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.ServerController.#ctor(System.String)">
+            <summary>
+            Constructor for the Server Controller
+            </summary>
+            <param name="ServerAddress">Location to Server</param>
+        </member>
+        <member name="M:NewPlayer.ServerController.ErrorMessage(System.Exception,System.String,System.Int32)">
+            <summary>
+            Format all Error Messages to look alike
+            </summary>
+            <param name="ErrorCode">Error Code, can be looked up at end of Form1.cs</param>
+            <param name="LineNumber">LineNumber of where the error occured</param>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetAllPlaylists">
+            <summary>
+            Return list of all playlists in server address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetAllPlaylists_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Get all playlists on server
+            </summary>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetPlaylist(System.String)">
+            <summary>
+            Returns List of All songs in given Playlist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewPlayer.ServerController.BackgroundGetPlaylist_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Gets all songs in selected playlist
+            </summary>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetSweepersFolder">
+            <summary>
+            Returns a list of all files in sweepers folder
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetSweepers_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Find the sweeper folder in the playlist directory and retrieve all files
+            </summary>
+        </member>
+        <member name="M:NewPlayer.ServerController.GetDirectoryListingRegexForUrl(System.String)">
+            <summary>
+            reads all files in given directory
+            </summary>
+            <param name="url">location of playlist</param>
+            <returns>returns name of file/song</returns>
+        </member>
+        <member name="F:NewPlayer.FrmSettings.saved">
+            <summary>
+            This is used to keep track of if the user has saved any changes
+            </summary>
+        </member>
+        <member name="F:NewPlayer.FrmSettings.mouseDown">
+            <summary>
+            Keeps track of whether or not the user is pressing down on the application
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="F:NewPlayer.FrmSettings.lastLocation">
+            <summary>
+            Keeps track of the last position the form was in.
+            used to move the form when user presses down
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.ErrorMessage(System.Exception,System.String,System.Int32)">
+            <summary>
+            Format all Error Messages to look alike
+            </summary>
+            <param name="ErrorCode">Error Code, can be looked up at end of Form1.cs</param>
+            <param name="LineNumber">LineNumber of where the error occured</param>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.Main_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.Main_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User lifts up with the mouse on the form, this function tells the program to stop moving the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.Main_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When User presses down with the mouse on the form, this function keeps track of the mouse location and moves the form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.btnClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the form
+            Asks user if they'd like to save changes
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Saves Settings to static class
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.btnInfo_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows Information Form
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.chkEnabled_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            Settings have been changed, update saved bool
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.numFreq_Click(System.Object,System.EventArgs)">
+            <summary>
+            Settings have been changed, update saved bool
+            </summary>
+        </member>
+        <member name="F:NewPlayer.FrmSettings.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:NewPlayer.FrmSettings.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:NewPlayer.SongProperties">
+            <summary>
+            Stores metadata of songs
+            </summary>
+        </member>
+        <member name="P:NewPlayer.SongProperties.Title">
+            <summary>
+            Get and set the Title of a song
+            </summary>
+        </member>
+        <member name="P:NewPlayer.SongProperties.index">
+            <summary>
+            Get and set the index value of a song in a playlist
+            </summary>
+        </member>
+        <member name="P:NewPlayer.SongProperties.URL">
+            <summary>
+            Get and set the file location of a song to the server
+            </summary>
+        </member>
+        <member name="T:NewPlayer.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.about">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.arrow_collapse_down">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.arrow_collapse_up">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.chevron_left">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.chevron_right">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.Default">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.help_circle_outline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.music_box_outline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.pause">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.pin">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.play">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.power">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.Settings">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.Song">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:NewPlayer.Properties.Resources.window_restore">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
