@@ -43,9 +43,6 @@ This desktop application is designed for Windows users to easily play and manage
 - Verify server URL and login credentials.
 - Update .NET Framework if the app does not start.
 
-## Support
-For any issues or questions, please contact support@example.com.
-
 ## License
 This software is licensed under the MIT License.
 
